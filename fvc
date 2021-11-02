@@ -2,7 +2,9 @@
 
 versionLabel="flutterVersionFolder"
 pathLabel="pathFolder"
+
 source fvc.config
+
 if [[ "$1" == "config" ]] && [[ "$2" == "--version-folder" ]]; then
     touch fvc.tmp.config && echo "${pathLabel}=${pathFolder}" >> fvc.tmp.config
     echo "${versionLabel}=$3" >> fvc.tmp.config
