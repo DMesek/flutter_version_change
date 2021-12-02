@@ -30,6 +30,9 @@ fvc config --version-folder $PATH_TO_VERSION_FOLDER
 ## Supported commands
 
 `fvc`: change active Flutter version.
+
 `fvc download --channel {stable,dev,beta}`: lists availble versions for specified channel, downloads the selected version into Flutter version folder.
+
 `fvc config --version-folder $PATH_TO_VERSION_FOLDER`: change the directory where the versions are downloaded.
+
 `fvc help`: list the supported commands.
