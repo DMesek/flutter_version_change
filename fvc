@@ -5,7 +5,7 @@ pathLabel="pathFolder"
 
 if [[ "$1" == "install" ]]; then
     currentDir=`pwd`
-    ln -s "${currentDir}/fvc" /usr/local/bin
+    ln -s "${currentDir}/fvc" "$HOME/flutter/bin"
     echo "Done"
     exit 0
 fi
@@ -19,13 +19,13 @@ if [[ "$1" == "help" ]]; then
     exit 0
 fi
 
-fvcAbsolutePath=`readlink -n /usr/local/bin/fvc`
+fvcAbsolutePath=`readlink -n $HOME/flutter/bin/fvc`
 if [[ "$?" == "1"  ]]; then
     echo "fvc not in path. Please run fvc install."
     exit 1
 fi
 
-fvcInstallationPath=`readlink -n /usr/local/bin/fvc`
+fvcInstallationPath=`readlink -n $HOME/flutter/bin/fvc`
 fvcInstallationFolder=${fvcInstallationPath::${#fvcInstallationPath}-4}
 cd $fvcInstallationFolder
 source fvc.config

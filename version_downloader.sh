@@ -1,12 +1,12 @@
 #!/bin/bash
-
+pwd
 VERSION_BASE_URL=https://storage.googleapis.com/flutter_infra_release/releases/
 VERSION_JSON_URL="${VERSION_BASE_URL}releases_macos.json"
 
 VERSION_LABEL_FOLDER="/tmp/availableVersionLabels"
 VERSION_FOLDER="/tmp/availableVersions"
 
-curl $VERSION_JSON_URL | python json_parser.py $1 $VERSION_FOLDER $VERSION_LABEL_FOLDER
+curl $VERSION_JSON_URL | python3 json_parser.py $1 $VERSION_FOLDER $VERSION_LABEL_FOLDER
 cat $VERSION_FOLDER
 
 echo "Enter index of desired version: "
